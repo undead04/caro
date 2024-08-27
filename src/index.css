@@ -6,8 +6,54 @@ body {
   -webkit-font-smoothing: antialiased;
   -moz-osx-font-smoothing: grayscale;
 }
-
+body,#root,html{
+  height: 100%;
+  background-color: var(--bs-secondary-bg);
+}
 code {
   font-family: source-code-pro, Menlo, Monaco, Consolas, 'Courier New',
     monospace;
 }
+@keyframes beat {
+  0%, 100% {
+    transform: scale(0.5);
+  }
+  50% {
+    transform: scale(1.5);
+  }
+}
+
+.beat-icon {
+  animation: beat 0.7s;
+  transform-origin: center;
+}
+.progress-svg {
+  display: block;
+  margin: 20px auto;
+  max-width: 100%;
+}
+
+.progress-bg {
+  fill: none;
+  stroke: #ddd;
+  stroke-width: 3.8;
+}
+
+.progress {
+  fill: none;
+  stroke-width: 3.8;
+  stroke-linecap: round;
+  stroke-dasharray: 100, 100;
+  stroke-dashoffset: 0;
+  animation: decrease linear infinite;
+}
+
+@keyframes decrease {
+  from {
+    stroke-dashoffset: 0;
+  }
+  to {
+    stroke-dashoffset: -100;
+  }
+}
+
